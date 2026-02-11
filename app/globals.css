@@ -1,0 +1,115 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 0 0% 0%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 0%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 0%;
+    --primary: 0 0% 0%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 0 0% 96%;
+    --secondary-foreground: 0 0% 0%;
+    --muted: 0 0% 96%;
+    --muted-foreground: 0 0% 45%;
+    --accent: 0 100% 45%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 85%;
+    --input: 0 0% 90%;
+    --ring: 0 0% 0%;
+    --radius: 0px;
+
+    --swiss-gray-100: 0 0% 96%;
+    --swiss-gray-200: 0 0% 88%;
+    --swiss-gray-300: 0 0% 74%;
+    --swiss-gray-400: 0 0% 58%;
+    --swiss-gray-500: 0 0% 44%;
+    --swiss-gray-600: 0 0% 34%;
+    --swiss-gray-700: 0 0% 24%;
+  }
+
+  .dark {
+    --background: 225 15% 10%;
+    --foreground: 40 12% 88%;
+    --card: 225 14% 13%;
+    --card-foreground: 40 12% 88%;
+    --popover: 225 14% 13%;
+    --popover-foreground: 40 12% 88%;
+    --primary: 40 12% 88%;
+    --primary-foreground: 225 15% 10%;
+    --secondary: 225 12% 16%;
+    --secondary-foreground: 40 12% 88%;
+    --muted: 225 12% 16%;
+    --muted-foreground: 220 8% 52%;
+    --accent: 4 80% 56%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 225 10% 22%;
+    --input: 225 10% 20%;
+    --ring: 40 12% 88%;
+
+    --swiss-gray-100: 225 12% 14%;
+    --swiss-gray-200: 225 10% 20%;
+    --swiss-gray-300: 225 8% 30%;
+    --swiss-gray-400: 220 6% 40%;
+    --swiss-gray-500: 220 5% 52%;
+    --swiss-gray-600: 220 6% 64%;
+    --swiss-gray-700: 220 8% 76%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+
+  ::selection {
+    background: hsl(4 80% 52%);
+    color: white;
+  }
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-33.333%);
+  }
+}
+
+@keyframes grain {
+  0%, 100% { transform: translate(0, 0); }
+  10% { transform: translate(-5%, -10%); }
+  30% { transform: translate(3%, -15%); }
+  50% { transform: translate(-15%, 5%); }
+  70% { transform: translate(10%, 10%); }
+  90% { transform: translate(-10%, 5%); }
+}
+
+@keyframes dash-draw {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}
